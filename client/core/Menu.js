@@ -39,14 +39,6 @@ const Menu = withRouter(({history}) => (
         <Link to="/shops/all">
           <Button style={isActive(history, "/shops/all")}>All Shops</Button>
         </Link>
-        <Link to="/cart">
-          <Button style={isActive(history, "/cart")}>
-            Cart
-            <Badge color="secondary" invisible={false} badgeContent={cart.itemTotal()} style={{'marginLeft': '7px'}}>
-              <CartIcon />
-            </Badge>
-          </Button>
-        </Link> 
         </div>
        
       {
@@ -72,7 +64,14 @@ const Menu = withRouter(({history}) => (
             }}>Sign out</Button>
         </span>)
       }
-      
+      <Link to="/cart">
+          <Button style={isActive(history, "/cart")}>
+            Cart
+            <Badge color="secondary" invisible={false} badgeContent={cart.itemTotal()} style={{'marginLeft': '7px'}}>
+              <CartIcon />
+            </Badge>
+          </Button>
+        </Link>
     </Toolbar>
   </AppBar>
 ))
